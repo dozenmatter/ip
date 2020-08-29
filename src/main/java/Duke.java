@@ -3,8 +3,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Duke {
+    private static final String BORDER = "____________________________________________________________";
+
     public static void main(String[] args) {
-        introduce();
+        printWelcome();
 
         Scanner sc = new Scanner(System.in);
         List<Task> tasks = new ArrayList<Task>();
@@ -19,11 +21,12 @@ public class Duke {
                 if (tasks.isEmpty()){
                     System.out.println("The list is currently empty!");
                 } else {
+                    System.out.println(BORDER);
                     System.out.println("Here are the tasks in your list:");
                     for (int i = 0; i < tasks.size(); i++){
-                        Task t = tasks.get(i);
-                        System.out.printf("%d.[%s] %s\n", (i+1), t.getStatusIcon(), t.getDescription());
+                        System.out.printf("%d. %s\n", (i+1), tasks.get(i));
                     }
+                    System.out.println(BORDER);
                 }
                 continue;
             }
@@ -44,12 +47,33 @@ public class Duke {
                 continue;
             }
 
-            tasks.add(new Task(input));
-            System.out.println("added: " + input);
+            if (input.startsWith("todo")) {
+                String task = input.substring(5);
+                tasks.add(new ToDo(task));
+
+            } else if (input.startsWith("deadline")) {
+                String[] tokens = input.substring(9).split("/by");
+                String task = tokens[0].trim();
+                String by = tokens[1].trim();
+                tasks.add(new Deadline(task, by));
+
+            } else if (input.startsWith("event")) {
+                String[] tokens = input.substring(6).split("/at");
+                String task = tokens[0].trim();
+                String at = tokens[1].trim();
+                tasks.add(new Event(task, at));
+            }
+
+            int size = tasks.size();
+            System.out.println(BORDER);
+            System.out.println("Got it. I've added this task:");
+            System.out.println(tasks.get(size-1));
+            System.out.println("Now you have " + size + " tasks in the list.");
+            System.out.println(BORDER);
         }
     }
 
-    public static void introduce(){
+    public static void printWelcome(){
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
@@ -59,4 +83,5 @@ public class Duke {
         System.out.println("Hello! I'm Duke");
         System.out.println("What can I do for you?");
     }
+
 }
