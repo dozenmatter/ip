@@ -1,0 +1,13 @@
+todo eat
+todo sleep
+list
+deadline submit IP /by Wed 2359
+list
+event discuss TP /at Sunday 1100
+list
+done 1
+done 2
+done 3
+done 4
+list
+bye

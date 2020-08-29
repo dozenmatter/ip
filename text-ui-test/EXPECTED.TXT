@@ -5,3 +5,59 @@ Hello from
 | |_| | |_| |   <  __/
 |____/ \__,_|_|\_\___|
 
+Hello! I'm Duke
+What can I do for you?
+____________________________________________________________
+Got it. I've added this task:
+[T][?] eat
+Now you have 1 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+[T][?] sleep
+Now you have 2 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks in your list:
+1. [T][?] eat
+2. [T][?] sleep
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+[D][?] submit IP (by: Wed 2359)
+Now you have 3 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks in your list:
+1. [T][?] eat
+2. [T][?] sleep
+3. [D][?] submit IP (by: Wed 2359)
+____________________________________________________________
+____________________________________________________________
+Got it. I've added this task:
+[E][?] discuss TP (at: Sunday 1100)
+Now you have 4 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks in your list:
+1. [T][?] eat
+2. [T][?] sleep
+3. [D][?] submit IP (by: Wed 2359)
+4. [E][?] discuss TP (at: Sunday 1100)
+____________________________________________________________
+Nice! I've marked this task as done:
+ [?] eat
+Nice! I've marked this task as done:
+ [?] sleep
+Nice! I've marked this task as done:
+ [?] submit IP
+Nice! I've marked this task as done:
+ [?] discuss TP
+____________________________________________________________
+Here are the tasks in your list:
+1. [T][?] eat
+2. [T][?] sleep
+3. [D][?] submit IP (by: Wed 2359)
+4. [E][?] discuss TP (at: Sunday 1100)
+____________________________________________________________
+Bye. Hope to see you again soon!
