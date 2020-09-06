@@ -24,6 +24,7 @@ public class Duke {
     private static final String ERROR_DEADLINE = "Here is how you create a Deadline task:\ndeadline <task name> /by <date time>\nGot it? :(";
     private static final String ERROR_EVENT = "Here is how you create an Event task:\nevent <task name> /at <date time>\nGot it? :(";
     private static final String ERROR_INVALID_COMMAND = "I'm sorry, but I don't know what that means :(";
+    private static final String ERROR_INVALID_TASK_NUMBER = "You specified an invalid task number! :(";
 
     /* List of user input commands */
     private static final String COMMAND_TODO = "todo";
@@ -216,7 +217,7 @@ public class Duke {
      * Processes a task as Done.
      * @param args user specified argument
      */
-    public static void processTaskAsDone(String args) {
+    public static void processTaskAsDone(String args) throws DukeException {
         try {
             int taskNum = getTaskNumber(args);
             if (validateTaskNumber(taskNum)) {
@@ -228,7 +229,7 @@ public class Duke {
         } catch (NumberFormatException e) {
             printWithDividers("That is not an integer... :(");
         } catch (ArrayIndexOutOfBoundsException e) {
-            printWithDividers("You specified an invalid task number! :(");
+            throw new DukeException(ERROR_INVALID_TASK_NUMBER);
         }
     }
 
