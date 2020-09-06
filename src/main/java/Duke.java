@@ -129,28 +129,32 @@ public class Duke {
         String command = processedInputs[0];
         String args = processedInputs[1];
 
-        switch (command) {
-        case COMMAND_TODO:
-            addToDo(args);
-            break;
-        case COMMAND_DEADLINE:
-            addDeadline(args);
-            break;
-        case COMMAND_EVENT:
-            addEvent(args);
-            break;
-        case COMMAND_DONE:
-            processTaskAsDone(args);
-            break;
-        case COMMAND_LIST:
-            printListOfTasks();
-            break;
-        case COMMAND_BYE:
-            exitProgram();
-        default:
-            printWithDividers(ERROR_INVALID_COMMAND);
-            break;
+        try {
+            switch (command) {
+            case COMMAND_TODO:
+                addToDo(args);
+                break;
+            case COMMAND_DEADLINE:
+                addDeadline(args);
+                break;
+            case COMMAND_EVENT:
+                addEvent(args);
+                break;
+            case COMMAND_DONE:
+                processTaskAsDone(args);
+                break;
+            case COMMAND_LIST:
+                printListOfTasks();
+                break;
+            case COMMAND_BYE:
+                exitProgram();
+            default:
+                throw new DukeException(ERROR_INVALID_COMMAND);
+            }
+        } catch (DukeException e) {
+            printWithDividers(e.getMessage());
         }
+
     }
 
     /**
@@ -181,14 +185,14 @@ public class Duke {
      * Adds a Deadline task into TASKS.
      * @param args user specified Deadline arguments
      */
-    public static void addDeadline(String args) {
+    public static void addDeadline(String args) throws DukeException {
         try {
             String[] tokens = args.split(PARAM_BY);
             String task = tokens[0].trim();
             String dateTime = tokens[1].trim();
             addTask(new Deadline(task, dateTime));
         } catch (ArrayIndexOutOfBoundsException e) {
-            printWithDividers(ERROR_DEADLINE);
+            throw new DukeException(ERROR_DEADLINE);
         }
     }
 
@@ -196,14 +200,14 @@ public class Duke {
      * Adds an Event task into TASKS.
      * @param args user specified Event arguments
      */
-    public static void addEvent(String args) {
+    public static void addEvent(String args) throws DukeException {
         try {
             String[] tokens = args.split(PARAM_AT);
             String task = tokens[0].trim();
             String dateTime = tokens[1].trim();
             addTask(new Event(task, dateTime));
         } catch (ArrayIndexOutOfBoundsException e) {
-            printWithDividers(ERROR_EVENT);
+            throw new DukeException(ERROR_EVENT);
         }
 
     }
