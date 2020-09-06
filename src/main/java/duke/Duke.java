@@ -1,3 +1,10 @@
+package duke;
+
+import duke.task.Deadline;
+import duke.task.Event;
+import duke.task.Task;
+import duke.task.ToDo;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,7 +17,7 @@ public class Duke {
             + "| |_| | |_| |   <  __/\n"
             + "|____/ \\__,_|_|\\_\\___|\n";
     private static final String MESSAGE_INTRO = "Hello from\n" + MESSAGE_LOGO;
-    private static final String MESSAGE_BODY = "Hello! I'm Duke\nWhat can I do for you?";
+    private static final String MESSAGE_BODY = "Hello! I'm duke.Duke\nWhat can I do for you?";
     private static final String MESSAGE_GOODBYE = "Bye. Hope to see you again soon!";
     private static final String DIVIDER = "____________________________________________________________";
 
@@ -21,8 +28,8 @@ public class Duke {
 
     // Error messages
     private static final String ERROR_TODO = "Here is how you create a Todo task:\ntodo <task name>\nGot it? :(";
-    private static final String ERROR_DEADLINE = "Here is how you create a Deadline task:\ndeadline <task name> /by <date time>\nGot it? :(";
-    private static final String ERROR_EVENT = "Here is how you create an Event task:\nevent <task name> /at <date time>\nGot it? :(";
+    private static final String ERROR_DEADLINE = "Here is how you create a duke.task.Deadline task:\ndeadline <task name> /by <date time>\nGot it? :(";
+    private static final String ERROR_EVENT = "Here is how you create an duke.task.Event task:\nevent <task name> /at <date time>\nGot it? :(";
     private static final String ERROR_INVALID_COMMAND = "I'm sorry, but I don't know what that means :(";
     private static final String ERROR_INVALID_TASK_NUMBER = "You specified an invalid task number! :(";
 
@@ -86,7 +93,7 @@ public class Duke {
 
     /**
      * Displays message whenever a new task is added.
-     * @param task user specified Task
+     * @param task user specified duke.task.Task
      */
     public static void printAddTask(Task task) {
         String taskCount = "Now you have " + TASKS.size() + " tasks in the list.";
@@ -183,8 +190,8 @@ public class Duke {
     }
 
     /**
-     * Adds a Deadline task into TASKS.
-     * @param args user specified Deadline arguments
+     * Adds a duke.task.Deadline task into TASKS.
+     * @param args user specified duke.task.Deadline arguments
      */
     public static void addDeadline(String args) throws DukeException {
         try {
@@ -198,8 +205,8 @@ public class Duke {
     }
 
     /**
-     * Adds an Event task into TASKS.
-     * @param args user specified Event arguments
+     * Adds an duke.task.Event task into TASKS.
+     * @param args user specified duke.task.Event arguments
      */
     public static void addEvent(String args) throws DukeException {
         try {
