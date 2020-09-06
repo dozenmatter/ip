@@ -10,8 +10,7 @@ public class Duke {
             + "| |_| | |_| |   <  __/\n"
             + "|____/ \\__,_|_|\\_\\___|\n";
     private static final String MESSAGE_INTRO = "Hello from\n" + MESSAGE_LOGO;
-    private static final String MESSAGE_BODY = "Hello! I'm Duke\n"
-            + "What can I do for you?";
+    private static final String MESSAGE_BODY = "Hello! I'm Duke\nWhat can I do for you?";
     private static final String MESSAGE_GOODBYE = "Bye. Hope to see you again soon!";
     private static final String DIVIDER = "____________________________________________________________";
 
@@ -19,6 +18,12 @@ public class Duke {
     private static final String MESSAGE_LIST_TASK = "Here are the tasks in your list:";
     private static final String MESSAGE_DONE_TASK = "Nice! I've marked this task as done:";
     private static final String MESSAGE_ADD_TASK = "Got it. I've added this task:";
+
+    // Error messages
+    private static final String ERROR_TODO = "Here is how you create a Todo task:\ntodo <task name>\nGot it? :(";
+    private static final String ERROR_DEADLINE = "Here is how you create a Deadline task:\ndeadline <task name> /by <date time>\nGot it? :(";
+    private static final String ERROR_EVENT = "Here is how you create an Event task:\nevent <task name> /at <date time>\nGot it? :(";
+    private static final String ERROR_INVALID_COMMAND = "I'm sorry, but I don't know what that means :(";
 
     /* List of user input commands */
     private static final String COMMAND_TODO = "todo";
@@ -29,8 +34,8 @@ public class Duke {
     private static final String COMMAND_BYE = "bye";
 
     /* List of user command parameters */
-    private static final String PARAM_AT = "/at";
-    private static final String PARAM_BY = "/by";
+    private static final String PARAM_AT = " /at ";
+    private static final String PARAM_BY = " /by ";
 
     /**
      * Handles user I/O.
@@ -142,6 +147,9 @@ public class Duke {
             break;
         case COMMAND_BYE:
             exitProgram();
+        default:
+            printWithDividers(ERROR_INVALID_COMMAND);
+            break;
         }
     }
 
@@ -162,7 +170,11 @@ public class Duke {
      * @param task user specified ToDo task
      */
     public static void addToDo(String task) {
-        addTask(new ToDo(task));
+        if (!task.isEmpty()) {
+            addTask(new ToDo(task));
+        } else {
+            printWithDividers(ERROR_TODO);
+        }
     }
 
     /**
@@ -170,10 +182,14 @@ public class Duke {
      * @param args user specified Deadline arguments
      */
     public static void addDeadline(String args) {
-        String[] tokens = args.split(PARAM_BY);
-        String task = tokens[0].trim();
-        String dateTime = tokens[1].trim();
-        addTask(new Deadline(task, dateTime));
+        try {
+            String[] tokens = args.split(PARAM_BY);
+            String task = tokens[0].trim();
+            String dateTime = tokens[1].trim();
+            addTask(new Deadline(task, dateTime));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            printWithDividers(ERROR_DEADLINE);
+        }
     }
 
     /**
@@ -181,10 +197,15 @@ public class Duke {
      * @param args user specified Event arguments
      */
     public static void addEvent(String args) {
-        String[] tokens = args.split(PARAM_AT);
-        String task = tokens[0].trim();
-        String dateTime = tokens[1].trim();
-        addTask(new Event(task, dateTime));
+        try {
+            String[] tokens = args.split(PARAM_AT);
+            String task = tokens[0].trim();
+            String dateTime = tokens[1].trim();
+            addTask(new Event(task, dateTime));
+        } catch (ArrayIndexOutOfBoundsException e) {
+            printWithDividers(ERROR_EVENT);
+        }
+
     }
 
     /**
@@ -192,10 +213,18 @@ public class Duke {
      * @param args user specified argument
      */
     public static void processTaskAsDone(String args) {
-        int taskNum = getTaskNumber(args);
-        if (validateTaskNumber(taskNum)) {
-            TASKS.get(taskNum).markAsDone();
-            printDone(taskNum);
+        try {
+            int taskNum = getTaskNumber(args);
+            if (validateTaskNumber(taskNum)) {
+                TASKS.get(taskNum).markAsDone();
+                printDone(taskNum);
+            } else {
+                throw new ArrayIndexOutOfBoundsException();
+            }
+        } catch (NumberFormatException e) {
+            printWithDividers("That is not an integer... :(");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            printWithDividers("You specified an invalid task number! :(");
         }
     }
 
