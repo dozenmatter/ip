@@ -17,7 +17,7 @@ public class Duke {
             + "| |_| | |_| |   <  __/\n"
             + "|____/ \\__,_|_|\\_\\___|\n";
     private static final String MESSAGE_INTRO = "Hello from\n" + MESSAGE_LOGO;
-    private static final String MESSAGE_BODY = "Hello! I'm duke.Duke\nWhat can I do for you?";
+    private static final String MESSAGE_BODY = "Hello! I'm Duke\nWhat can I do for you?";
     private static final String MESSAGE_GOODBYE = "Bye. Hope to see you again soon!";
     private static final String DIVIDER = "____________________________________________________________";
 
@@ -25,13 +25,15 @@ public class Duke {
     private static final String MESSAGE_LIST_TASK = "Here are the tasks in your list:";
     private static final String MESSAGE_DONE_TASK = "Nice! I've marked this task as done:";
     private static final String MESSAGE_ADD_TASK = "Got it. I've added this task:";
+    private static final String MESSAGE_DELETE_TASK = "Noted. I've removed this task:";
 
     // Error messages
-    private static final String ERROR_TODO = "Here is how you create a Todo task:\ntodo <task name>\nGot it? :(";
-    private static final String ERROR_DEADLINE = "Here is how you create a duke.task.Deadline task:\ndeadline <task name> /by <date time>\nGot it? :(";
-    private static final String ERROR_EVENT = "Here is how you create an duke.task.Event task:\nevent <task name> /at <date time>\nGot it? :(";
+    private static final String ERROR_TODO = "Here is how to create a Todo task:\ntodo <task name>\nGot it? :(";
+    private static final String ERROR_DEADLINE = "Here is how to create a Deadline task:\ndeadline <task name> /by <date time>\nGot it? :(";
+    private static final String ERROR_EVENT = "Here is how to create an Event task:\nevent <task name> /at <date time>\nGot it? :(";
     private static final String ERROR_INVALID_COMMAND = "I'm sorry, but I don't know what that means :(";
     private static final String ERROR_INVALID_TASK_NUMBER = "You specified an invalid task number! :(";
+    private static final String ERROR_NUMBER_FORMAT = "That is not an integer... :(";
 
     /* List of user input commands */
     private static final String COMMAND_TODO = "todo";
@@ -40,6 +42,7 @@ public class Duke {
     private static final String COMMAND_LIST = "list";
     private static final String COMMAND_DONE = "done";
     private static final String COMMAND_BYE = "bye";
+    private static final String COMMAND_DELETE = "delete";
 
     /* List of user command parameters */
     private static final String PARAM_AT = " /at ";
@@ -53,7 +56,7 @@ public class Duke {
     /**
      * Stores a list of user tasks
      */
-    private static final ArrayList<Task> TASKS = new ArrayList<Task>();
+    private static final ArrayList<Task> TASKS = new ArrayList<>();
 
     public static void main(String[] args) {
         printWelcome();
@@ -75,7 +78,7 @@ public class Duke {
      * Displays the completed task.
      * @param taskNo user specified task number
      */
-    public static void printDone(int taskNo) {
+    public static void printMarkAsDone(int taskNo) {
         printWithDividers(MESSAGE_DONE_TASK, TASKS.get(taskNo).toString());
     }
 
@@ -98,6 +101,11 @@ public class Duke {
     public static void printAddTask(Task task) {
         String taskCount = "Now you have " + TASKS.size() + " tasks in the list.";
         printWithDividers(MESSAGE_ADD_TASK, task.toString(), taskCount);
+    }
+
+    public static void printRemoveTask(int taskNo) {
+        String taskCount = "Now you have " + (TASKS.size()-1) + " tasks in the list.";
+        printWithDividers(MESSAGE_DELETE_TASK, TASKS.get(taskNo).toString(), taskCount);
     }
 
     /**
@@ -154,6 +162,9 @@ public class Duke {
             case COMMAND_LIST:
                 printListOfTasks();
                 break;
+            case COMMAND_DELETE:
+                deleteTask(args);
+                break;
             case COMMAND_BYE:
                 exitProgram();
             default:
@@ -181,12 +192,11 @@ public class Duke {
      * Adds a ToDo task into TASKS.
      * @param task user specified ToDo task
      */
-    public static void addToDo(String task) {
-        if (!task.isEmpty()) {
-            addTask(new ToDo(task));
-        } else {
-            printWithDividers(ERROR_TODO);
+    public static void addToDo(String task) throws DukeException {
+        if (task.isEmpty()) {
+            throw new DukeException(ERROR_TODO);
         }
+        addTask(new ToDo(task));
     }
 
     /**
@@ -229,14 +239,12 @@ public class Duke {
             int taskNum = getTaskNumber(args);
             if (validateTaskNumber(taskNum)) {
                 TASKS.get(taskNum).markAsDone();
-                printDone(taskNum);
+                printMarkAsDone(taskNum);
             } else {
-                throw new ArrayIndexOutOfBoundsException();
+                throw new DukeException(ERROR_INVALID_TASK_NUMBER);
             }
         } catch (NumberFormatException e) {
-            printWithDividers("That is not an integer... :(");
-        } catch (ArrayIndexOutOfBoundsException e) {
-            throw new DukeException(ERROR_INVALID_TASK_NUMBER);
+            printWithDividers(ERROR_NUMBER_FORMAT);
         }
     }
 
@@ -247,6 +255,20 @@ public class Duke {
     public static void addTask(Task task) {
         TASKS.add(task);
         printAddTask(task);
+    }
+
+    public static void deleteTask(String args) throws DukeException {
+        try {
+            int taskNum = getTaskNumber(args);
+            if (validateTaskNumber(taskNum)) {
+                printRemoveTask(taskNum);
+                TASKS.remove(taskNum);
+            } else {
+                throw new DukeException(ERROR_INVALID_TASK_NUMBER);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(ERROR_NUMBER_FORMAT);
+        }
     }
 
     /**
