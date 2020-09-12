@@ -5,7 +5,7 @@ Hello from
 | |_| | |_| |   <  __/
 |____/ \__,_|_|\_\___|
 
-Hello! I'm duke.Duke
+Hello! I'm Duke
 What can I do for you?
 ____________________________________________________________
 Got it. I've added this task:
@@ -67,5 +67,29 @@ Here are the tasks in your list:
 2. [T][✓] sleep
 3. [D][✓] submit IP (by: Wed 2359)
 4. [E][✓] discuss TP (at: Sunday 1100)
+____________________________________________________________
+____________________________________________________________
+Noted. I've removed this task:
+[T][✓] eat
+Now you have 3 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks in your list:
+1. [T][✓] sleep
+2. [D][✓] submit IP (by: Wed 2359)
+3. [E][✓] discuss TP (at: Sunday 1100)
+____________________________________________________________
+____________________________________________________________
+You specified an invalid task number! :(
+____________________________________________________________
+____________________________________________________________
+Noted. I've removed this task:
+[E][✓] discuss TP (at: Sunday 1100)
+Now you have 2 tasks in the list.
+____________________________________________________________
+____________________________________________________________
+Here are the tasks in your list:
+1. [T][✓] sleep
+2. [D][✓] submit IP (by: Wed 2359)
 ____________________________________________________________
 Bye. Hope to see you again soon!
