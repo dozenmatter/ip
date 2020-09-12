@@ -1,6 +1,7 @@
 package duke.task;
 
 public class Deadline extends Task {
+    private final char ICON = 'D';
     private String by;
 
     public Deadline(String description, String by) {
@@ -12,12 +13,17 @@ public class Deadline extends Task {
         return by;
     }
 
+    @Override
+    public char getIcon() {
+        return ICON;
+    }
+
     public void setBy(String by) {
         this.by = by;
     }
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (by: " + by + ")";
+        return "[" + ICON + "]" + super.toString() + " (by: " + by + ")";
     }
 }

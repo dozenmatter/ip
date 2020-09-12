@@ -17,8 +17,16 @@ public class Task {
         return description;
     }
 
+    public boolean hasDone() {
+        return isDone;
+    }
+
     public void markAsDone(){
         isDone = true;
+    }
+
+    public char getIcon() {
+        return ' ';
     }
 
     @Override
