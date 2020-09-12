@@ -1,6 +1,7 @@
 package duke.task;
 
 public class Event extends Task {
+    private final char ICON = 'E';
     private String at;
 
     public Event(String description, String at) {
@@ -12,12 +13,17 @@ public class Event extends Task {
         return at;
     }
 
+    @Override
+    public char getIcon() {
+        return ICON;
+    }
+
     public void setAt(String at) {
         this.at = at;
     }
 
     @Override
     public String toString() {
-        return "[E]" + super.toString() + " (at: " + at + ")";
+        return "[" + ICON + "]" + super.toString() + " (at: " + at + ")";
     }
 }

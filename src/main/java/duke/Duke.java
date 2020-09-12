@@ -1,5 +1,6 @@
 package duke;
 
+import duke.file.FileManager;
 import duke.task.Deadline;
 import duke.task.Event;
 import duke.task.Task;
@@ -17,7 +18,7 @@ public class Duke {
             + "| |_| | |_| |   <  __/\n"
             + "|____/ \\__,_|_|\\_\\___|\n";
     private static final String MESSAGE_INTRO = "Hello from\n" + MESSAGE_LOGO;
-    private static final String MESSAGE_BODY = "Hello! I'm duke.Duke\nWhat can I do for you?";
+    private static final String MESSAGE_BODY = "Hello! I'm Duke\nWhat can I do for you?";
     private static final String MESSAGE_GOODBYE = "Bye. Hope to see you again soon!";
     private static final String DIVIDER = "____________________________________________________________";
 
@@ -53,10 +54,13 @@ public class Duke {
     /**
      * Stores a list of user tasks
      */
-    private static final ArrayList<Task> TASKS = new ArrayList<Task>();
+    private static final ArrayList<Task> TASKS = new ArrayList<>();
+
+    private static final FileManager FILE_MANAGER = new FileManager();
 
     public static void main(String[] args) {
         printWelcome();
+        loadDataFromDisk();
         while (SC.hasNextLine()) {
             String input = getUserInput();
             executeUserCommand(input);
@@ -155,6 +159,7 @@ public class Duke {
                 printListOfTasks();
                 break;
             case COMMAND_BYE:
+                saveDataToDisk();
                 exitProgram();
             default:
                 throw new DukeException(ERROR_INVALID_COMMAND);
@@ -265,5 +270,71 @@ public class Duke {
      */
     public static int getTaskNumber(String number) {
         return Integer.parseInt(number) - 1;
+    }
+
+    public static void saveDataToDisk() {
+        FILE_MANAGER.writeToFile(parseListToString(TASKS));
+    }
+
+    public static String parseListToString(ArrayList<Task> tasks) {
+        String saveTxt = "";
+        for (Task t : tasks) {
+            saveTxt += parseTaskToString(t);
+        }
+        return saveTxt;
+    }
+
+    public static String parseTaskToString(Task t) {
+        if (t instanceof Deadline) {
+            Deadline d = (Deadline) t;
+            return String.format("%s | %d | %s | %s\n", d.getIcon(), d.hasDone() ? 1 : 0, d.getDescription(), d.getBy());
+        } else if (t instanceof Event) {
+            Event e = (Event) t;
+            return String.format("%s | %d | %s | %s\n", e.getIcon(), e.hasDone() ? 1 : 0, e.getDescription(), e.getAt());
+        }
+        return String.format("%s | %d | %s\n", t.getIcon(), t.hasDone() ? 1 : 0, t.getDescription());
+    }
+
+    public static void loadDataFromDisk() {
+        String data = FILE_MANAGER.readSavedFile();
+        if (!data.isEmpty()) {
+            String[] tokens = data.split("\n");
+            for (String line : tokens) {
+                parseToArrayList(line);
+            }
+        }
+    }
+
+    public static void parseToArrayList(String line) {
+        try {
+            String[] tokens = line.split("\\s\\|\\s");
+
+            String icon = tokens[0];
+            boolean isDone = Integer.parseInt(tokens[1]) == 1;
+            String description = tokens[2];
+
+            Task t;
+            switch(icon) {
+            case "D":
+                String by = tokens[3];
+                t = new Deadline(description, by);
+                break;
+            case "E":
+                String at = tokens[3];
+                t = new Event(description, at);
+                break;
+            default:
+                t = new ToDo(description);
+                break;
+            }
+
+            if (isDone) {
+                t.markAsDone();
+            }
+
+            TASKS.add(t);
+        } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
+            System.out.println("Error occurred while reading from file. Unable to load saved data.");
+        }
     }
 }
