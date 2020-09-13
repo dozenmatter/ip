@@ -1,6 +1,6 @@
 package duke;
 
-import duke.file.FileManager;
+import duke.store.Storage;
 import duke.task.Deadline;
 import duke.task.Event;
 import duke.task.Task;
@@ -59,7 +59,7 @@ public class Duke {
      */
     private static final ArrayList<Task> TASKS = new ArrayList<>();
 
-    private static final FileManager FILE_MANAGER = new FileManager();
+    private static final Storage FILE_MANAGER = new Storage();
 
     public static void main(String[] args) {
         printWelcome();
@@ -295,7 +295,7 @@ public class Duke {
     }
 
     public static void saveDataToDisk() {
-        FILE_MANAGER.writeToFile(parseListToString(TASKS));
+        FILE_MANAGER.save(parseListToString(TASKS));
     }
 
     public static String parseListToString(ArrayList<Task> tasks) {
@@ -318,7 +318,7 @@ public class Duke {
     }
 
     public static void loadDataFromDisk() {
-        String data = FILE_MANAGER.readSavedFile();
+        String data = FILE_MANAGER.load();
         if (!data.isEmpty()) {
             String[] tokens = data.split("\n");
             for (String line : tokens) {

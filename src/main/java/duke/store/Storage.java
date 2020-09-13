@@ -1,4 +1,4 @@
-package duke.file;
+package duke.store;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,14 +6,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class FileManager {
+public class Storage {
     private final String HOME = System.getProperty("user.dir");
     private final String SEPARATOR = File.separator;
     private final String DIRECTORY = HOME + SEPARATOR + "data" + SEPARATOR;
     private final String FILENAME = "duke.txt";
     private final File SAVE_FILE = new File(DIRECTORY + FILENAME);
 
-    public FileManager() {
+    public Storage() {
         try {
             if (!SAVE_FILE.getParentFile().exists()) {
                 SAVE_FILE.getParentFile().mkdirs();
@@ -27,7 +27,7 @@ public class FileManager {
         }
     }
 
-    public void writeToFile(String content) {
+    public void save(String content) {
         try {
             FileWriter fileWriter = new FileWriter(SAVE_FILE);
             fileWriter.write(content);
@@ -37,7 +37,7 @@ public class FileManager {
         }
     }
 
-    public String readSavedFile() {
+    public String load() {
         String data = "";
         try {
             Scanner sc = new Scanner(SAVE_FILE);
