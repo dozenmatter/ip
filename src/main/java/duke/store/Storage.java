@@ -7,11 +7,12 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Storage {
-    private final String HOME = System.getProperty("user.dir");
+    private final String CURRENT = System.getProperty("user.dir");
     private final String SEPARATOR = File.separator;
-    private final String DIRECTORY = HOME + SEPARATOR + "data" + SEPARATOR;
+    private final String DIRECTORY = SEPARATOR + "data" + SEPARATOR;
     private final String FILENAME = "duke.txt";
-    private final File SAVE_FILE = new File(DIRECTORY + FILENAME);
+    private final String FILEPATH = CURRENT + DIRECTORY + FILENAME;
+    private final File SAVE_FILE = new File(FILEPATH);
 
     public Storage() {
         try {
