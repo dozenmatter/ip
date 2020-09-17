@@ -1,5 +1,6 @@
 package duke.parser;
 
+import duke.command.FindCommand;
 import duke.exception.DukeException;
 import duke.command.AddDeadlineCommand;
 import duke.command.AddEventCommand;
@@ -22,6 +23,7 @@ public class Parser {
     private static final String COMMAND_DONE = "done";
     private static final String COMMAND_BYE = "bye";
     private static final String COMMAND_DELETE = "delete";
+    private static final String COMMAND_FIND = "find";
 
     private static final String ERROR_INVALID_COMMAND = "I'm sorry, but I don't know what that means :(";
 
@@ -57,6 +59,8 @@ public class Parser {
             return new DeleteCommand(arguments);
         case COMMAND_BYE:
             return new ExitCommand();
+        case COMMAND_FIND:
+            return new FindCommand(arguments);
         default:
             throw new DukeException(ERROR_INVALID_COMMAND);
         }
