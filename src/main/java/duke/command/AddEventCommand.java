@@ -13,7 +13,7 @@ public class AddEventCommand extends Command {
     private Event event;
 
     private static final String PARAM_AT = " /at ";
-    private static final String ERROR_EVENT = "Here is how to create an Event task:\nevent <task name> /at <date time>\nGot it? :(";
+    private static final String ERROR_EVENT = "Here is how to create an Event task:\nevent <task name> /at <date time: dd/MM/yyyy HHmm>\nGot it? :(";
 
     /**
      * AddEventCommand constructor.

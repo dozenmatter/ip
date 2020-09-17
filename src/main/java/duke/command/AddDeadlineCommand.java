@@ -13,7 +13,7 @@ public class AddDeadlineCommand extends Command {
     private Deadline deadline;
 
     private static final String PARAM_BY = " /by ";
-    private static final String ERROR_DEADLINE = "Here is how to create a Deadline task:\ndeadline <task name> /by <date time>\nGot it? :(";
+    private static final String ERROR_DEADLINE = "Here is how to create a Deadline task:\ndeadline <task name> /by <date time: dd/MM/yyyy HHmm>\nGot it? :(";
 
     /**
      * AddDeadlineCommand constructor.

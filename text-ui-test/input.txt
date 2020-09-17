@@ -1,9 +1,9 @@
 todo eat
 todo sleep
 list
-deadline submit IP /by Wed 2359
+deadline submit IP /by 16/09/2020 2359
 list
-event discuss TP /at Sunday 1100
+event discuss TP /at 20/09/2020 1100
 list
 done 1
 done 2

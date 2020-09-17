@@ -1,11 +1,18 @@
 package duke.task;
 
+import duke.exception.DukeException;
+import duke.parser.DateTimeParser;
+
+import java.text.ParseException;
+import java.util.Date;
+
 /**
  * Handles Event tasks.
  */
-public class Event extends Task {
+public class Event extends Task implements DateTimeParser {
     private final char ICON = 'E';
     private String at;
+    private Date parseAt;
 
     /**
      * Instantiates an Event object with description and at.
@@ -13,9 +20,15 @@ public class Event extends Task {
      * @param description event description
      * @param at event at
      */
-    public Event(String description, String at) {
+    public Event(String description, String at) throws DukeException {
         super(description);
         this.at = at;
+
+        try {
+            parseAt = STRING_TO_DATE.parse(at);
+        } catch (ParseException e) {
+            throw new DukeException(ERROR_INVALID_DATE_STRING);
+        }
     }
 
     /**
@@ -34,6 +47,6 @@ public class Event extends Task {
 
     @Override
     public String toString() {
-        return "[" + ICON + "]" + super.toString() + " (at: " + at + ")";
+        return "[" + ICON + "]" + super.toString() + " (at: " + DATE_TO_STRING.format(parseAt) + ")";
     }
 }
