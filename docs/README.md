@@ -4,9 +4,9 @@
 
 1. Ensure you have **Java 11** or above installed in your computer.
 
-2. Download the latest `Duke.jar` from [here](https://github.com/dozenmatter/ip)
+2. Download the latest `Duke.jar` from [here](https://github.com/dozenmatter/ip).
 
-3. Copy the file to the folder you want as your *home folder* for Duke
+3. Copy the file to the folder you want as your *home folder* for Duke.
 
 4. In **Windows**, open **cmd** and *cd* into the current file directory where you placed the Duke application.
 
@@ -28,6 +28,7 @@ What can I do for you?
 7. Type the command in the command line and press *Enter* to execute it.
 
 8. Refer to the Usage below for details of each command.
+
 
 ## Features 
 
