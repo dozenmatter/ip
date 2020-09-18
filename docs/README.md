@@ -2,7 +2,7 @@
 
 ## Quick start
 
-1. Ensure you have **Java 11** or above installed in your computer.
+1. Ensure that you have **Java 11** or above installed in your computer.
 
 2. Download the latest `Duke.jar` from [here](https://github.com/dozenmatter/ip).
 
