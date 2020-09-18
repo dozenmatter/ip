@@ -175,7 +175,7 @@ ____________________________________________________________
 
 ### `bye`
 
-Exits the Duke application.
+Exits the Duke application with goodbye message.
 
 **Command:**
 
