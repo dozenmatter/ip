@@ -92,9 +92,9 @@ Adds an Event task into the task list. Prints the task added and the current num
 
 `event TASK_NAME /at DATE_TIME`
 
-**Example of usage:** 
-
 `DATE_TIME format: dd/MM/yyyy HHmm`
+
+**Example of usage:** 
 
 `event discuss TP /at 20/09/2020 1100`
 
