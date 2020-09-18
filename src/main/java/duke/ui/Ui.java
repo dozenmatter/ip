@@ -40,6 +40,7 @@ public class Ui {
     public void printWelcome() {
         System.out.println(MESSAGE_INTRO);
         System.out.println(MESSAGE_BODY);
+        System.out.println(DIVIDER);
     }
 
     /**

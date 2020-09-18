@@ -8,6 +8,7 @@ Hello from
 Hello! I'm Duke
 What can I do for you?
 ____________________________________________________________
+____________________________________________________________
 Got it. I've added this task:
 [T][✘] eat
 Now you have 1 tasks in the list.
@@ -91,5 +92,9 @@ ____________________________________________________________
 Here are the tasks in your list:
 1. [T][✓] sleep
 2. [D][✓] submit IP (by: Sep 16 2020, 11:59PM)
+____________________________________________________________
+____________________________________________________________
+Here are the matching tasks in your list:
+1. [T][✓] sleep
 ____________________________________________________________
 Bye. Hope to see you again soon!
