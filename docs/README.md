@@ -1,5 +1,34 @@
 # User Guide
 
+## Quick start
+
+1. Ensure you have **Java 11** or above installed in your computer.
+
+2. Download the latest `Duke.jar` from [here](https://github.com/dozenmatter/ip)
+
+3. Copy the file to the folder you want as your *home folder* for Duke
+
+4. In **Windows**, open **cmd** and *cd* into the current file directory where you placed the Duke application.
+
+5. In **Linux**, open **terminal** and *cd* into the current file directory where you placed the Duke application.
+
+6. Run the command ```java -jar Duke.jar``` to launch Duke. You should see the following *welcome* screen.
+```
+Hello from
+ ____        _        
+|  _ \ _   _| | _____ 
+| | | | | | | |/ / _ \
+| |_| | |_| |   <  __/
+|____/ \__,_|_|\_\___|
+
+Hello! I'm Duke
+What can I do for you?
+```
+
+7. Type the command in the command line and press *Enter* to execute it.
+
+8. Refer to the Usage below for details of each command.
+
 ## Features 
 
 ### Feature 1 
