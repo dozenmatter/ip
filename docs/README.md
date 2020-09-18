@@ -23,6 +23,7 @@ Hello from
 
 Hello! I'm Duke
 What can I do for you?
+____________________________________________________________
 ```
 
 7. Type the command in the command line and press *Enter* to execute it.
