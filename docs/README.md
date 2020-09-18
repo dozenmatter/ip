@@ -7,7 +7,7 @@ Description of feature.
 
 ## Usage
 
-### `todo` - Describe action
+### `todo`
 
 Adds a ToDo task into the task list. The program prints the task added and the current number of tasks in the task list.
 
@@ -30,7 +30,7 @@ ____________________________________________________________
 ```
 <br>
 
-### `deadline` - Describe action
+### `deadline`
 
 Adds a Deadline task into the task list. The program prints the task added and the current number of tasks in the task list.
 
@@ -55,7 +55,7 @@ ____________________________________________________________
 ```
 <br>
 
-### `event` - Describe action
+### `event`
 
 Adds an Event task into the task list. Prints the task added and the current number of tasks in the task list.
 
@@ -80,7 +80,7 @@ ____________________________________________________________
 ```
 <br>
 
-### `list` - Describe action
+### `list`
 
 Displays all tasks in the task list.
 
@@ -105,7 +105,7 @@ ____________________________________________________________
 ```
 <br>
 
-### `done` - Describe action
+### `done`
 
 Marks a task as done in the task list.
 
@@ -128,7 +128,7 @@ ____________________________________________________________
 ```
 <br>
 
-### `delete` - Describe action
+### `delete`
 
 Removes a task from the task list. Prints the task deleted and the current number of tasks in the task list.
 
@@ -151,7 +151,7 @@ ____________________________________________________________
 ```
 <br>
 
-### `find` - Describe action
+### `find`
 
 Finds a task by keyword. Prints the list of tasks found.
 
@@ -173,7 +173,7 @@ ____________________________________________________________
 ```
 <br>
 
-### `bye` - Describe action
+### `bye`
 
 Exits the Duke application.
 
