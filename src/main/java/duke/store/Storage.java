@@ -10,7 +10,7 @@ import java.util.Scanner;
  * Saving and loading of saved data
  */
 public class Storage {
-    private static final String CURRENT = System.getProperty("user.dir");
+    private static final String CURRENT_DIR = System.getProperty("user.dir");
     private static final String SEPARATOR = File.separator;
 
     private File saveFile;
@@ -22,7 +22,7 @@ public class Storage {
      */
     public Storage(String filePath) {
         try {
-            filePath = CURRENT + filePath.replace("/", SEPARATOR).replace("\\", SEPARATOR);
+            filePath = CURRENT_DIR + filePath.replace("/", SEPARATOR).replace("\\", SEPARATOR);
             saveFile = new File(filePath);
 
             if (!saveFile.getParentFile().exists()) {
@@ -38,7 +38,7 @@ public class Storage {
     }
 
     /**
-     * Saves task list into a file
+     * Saves task list into a file.
      *
      * @param content list of tasks
      */
@@ -53,7 +53,7 @@ public class Storage {
     }
 
     /**
-     * Loads data from file into a String object
+     * Loads data from file into a String object.
      *
      * @return a String object containing saved data
      */

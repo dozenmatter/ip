@@ -43,6 +43,15 @@ public class Duke {
     }
 
     /**
+     * Program main method.
+     *
+     * @param args user specified arguments
+     */
+    public static void main(String[] args) {
+        new Duke("/data/tasks.txt").run();
+    }
+
+    /**
      * Reads the user command and executes it, until the user issues the exit command.
      */
     private void runCommandLoopUntilExit() {
@@ -50,7 +59,7 @@ public class Duke {
         while (!isExit) {
             try {
                 String fullCommand = ui.readCommand();
-                Command c = Parser.parse(fullCommand);
+                Command c = Parser.parseUserInput(fullCommand);
                 c.execute(tasks, ui, storage);
                 isExit = c.isExit();
             } catch (DukeException e) {
@@ -65,14 +74,5 @@ public class Duke {
     private void exit() {
         ui.printGoodBye();
         System.exit(0);
-    }
-
-    /**
-     * Program main method.
-     *
-     * @param args user specified arguments
-     */
-    public static void main(String[] args) {
-        new Duke("/data/tasks.txt").run();
     }
 }

@@ -4,12 +4,12 @@ import duke.exception.DukeException;
 import java.util.ArrayList;
 
 /**
- * Stores a list of tasks
+ * Stores a list of tasks.
  */
 public class TaskList {
     private ArrayList<Task> tasks;
 
-    private static final String ERROR_READ_DATA = "Error occurred while reading from file. Unable to load saved data.";
+    private static final String ERROR_PARSE_DATA = "Error occurred while reading from file. Unable to load saved data.";
 
     /**
      * Instantiates a TaskList object with saved data.
@@ -23,7 +23,7 @@ public class TaskList {
         if (!data.isEmpty()) {
             String[] lines = data.split("\n");
             for (String line : lines) {
-                parseToArrayList(line);
+                parseToTaskList(line);
             }
         }
     }
@@ -41,7 +41,7 @@ public class TaskList {
      * @param line string of tasks
      * @throws DukeException if string cannot be parsed
      */
-    public void parseToArrayList(String line) throws DukeException {
+    public void parseToTaskList(String line) throws DukeException {
         try {
             String[] tokens = line.split("\\s\\|\\s");
 
@@ -49,28 +49,28 @@ public class TaskList {
             boolean isDone = Integer.parseInt(tokens[1]) == 1;
             String description = tokens[2];
 
-            Task t;
+            Task task;
             switch(icon) {
             case "D":
                 String by = tokens[3];
-                t = new Deadline(description, by);
+                task = new Deadline(description, by);
                 break;
             case "E":
                 String at = tokens[3];
-                t = new Event(description, at);
+                task = new Event(description, at);
                 break;
             default:
-                t = new ToDo(description);
+                task = new ToDo(description);
                 break;
             }
 
             if (isDone) {
-                t.markAsDone();
+                task.markAsDone();
             }
 
-            tasks.add(t);
+            tasks.add(task);
         } catch (ArrayIndexOutOfBoundsException | NumberFormatException e) {
-            throw new DukeException(ERROR_READ_DATA);
+            throw new DukeException(ERROR_PARSE_DATA);
         }
     }
 

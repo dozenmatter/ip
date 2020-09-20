@@ -1,13 +1,13 @@
 package duke.task;
 
 /**
- * Handles ToDo tasks.
+ * Creates a ToDo task.
  */
 public class ToDo extends Task {
     private final char ICON = 'T';
 
     /**
-     * Instantiates a ToDo objects with description.
+     * Instantiates a ToDo object with description.
      *
      * @param description task description
      */

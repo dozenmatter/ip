@@ -3,7 +3,7 @@ package duke.parser;
 import java.text.SimpleDateFormat;
 
 /**
- * Parses DateTime to string and vice versa
+ * Parses Date to string and vice versa
  */
 public interface DateTimeParser {
     SimpleDateFormat STRING_TO_DATE = new SimpleDateFormat("dd/MM/yyyy HHmm");

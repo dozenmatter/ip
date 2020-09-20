@@ -16,7 +16,7 @@ public abstract class Command {
      * @param tasks list of tasks
      * @param ui user interface functions
      * @param storage storage functions
-     * @throws DukeException
+     * @throws DukeException if an error occurs
      */
     public abstract void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException;
 

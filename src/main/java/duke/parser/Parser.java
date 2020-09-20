@@ -34,7 +34,7 @@ public class Parser {
      * @return the command based on user input
      * @throws DukeException if user command is invalid
      */
-    public static Command parse(String input) throws DukeException {
+    public static Command parseUserInput(String input) throws DukeException {
         String[] tokens = input.split(" ", 2);
 
         if (tokens.length < 2) {

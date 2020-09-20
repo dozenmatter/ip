@@ -7,7 +7,7 @@ import java.text.ParseException;
 import java.util.Date;
 
 /**
- * Handles Event tasks.
+ * Creates an Event task.
  */
 public class Event extends Task implements DateTimeParser {
     private final char ICON = 'E';

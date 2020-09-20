@@ -7,7 +7,7 @@ import java.text.ParseException;
 import java.util.Date;
 
 /**
- * Handles Deadline tasks
+ * Creates a Deadline task
  */
 public class Deadline extends Task implements DateTimeParser {
     private final char ICON = 'D';

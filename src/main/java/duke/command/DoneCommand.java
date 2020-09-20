@@ -31,14 +31,14 @@ public class DoneCommand extends Command {
 
     @Override
     public void execute(TaskList tasks, Ui ui, Storage storage) throws DukeException {
-        if (isValidTaskNumber(tasks.getSize())) {
-            Task t = tasks.get(taskNum);
-            t.markAsDone();
-            ui.printMarkAsDone(t);
-            storage.save(tasks.toString());
-        } else {
+        if (!isValidTaskNumber(tasks.getSize())) {
             throw new DukeException(ERROR_INVALID_TASK_NUMBER);
         }
+
+        Task task = tasks.get(taskNum);
+        task.markAsDone();
+        ui.printMarkAsDone(task);
+        storage.save(tasks.toString());
     }
 
     @Override
@@ -47,7 +47,7 @@ public class DoneCommand extends Command {
     }
 
     /**
-     * Takes in task list size and checks if user specified task number is valid
+     * Checks if user specified task number is valid
      *
      * @param size task list size
      * @return true if task number is >= 0 and < size, false otherwise.

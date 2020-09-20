@@ -45,6 +45,7 @@ public class Ui {
 
     /**
      * Displays a message enclosed within dividers.
+     *
      * @param message user specified message(s)
      */
     public void printWithDividers(String... message) {
@@ -124,18 +125,9 @@ public class Ui {
     /**
      * Prints search result of specified keyword.
      *
-     * @param tasks list of tasks to search from
-     * @param keyword user specified keyword
+     * @param searchResult search result string
      */
-    public void printSearchResult(TaskList tasks, String keyword) {
-        System.out.println(DIVIDER);
-        System.out.println(MESSAGE_SEARCH_RESULT);
-        for (int i = 0, j = 0; i < tasks.getSize(); i++) {
-            Task t = tasks.get(i);
-            if (t.getDescription().contains(keyword)) {
-                System.out.println((++j) + ". " + t.toString());
-            }
-        }
-        System.out.println(DIVIDER);
+    public void printSearchResult(String searchResult) {
+        printWithDividers(MESSAGE_SEARCH_RESULT, searchResult);
     }
 }

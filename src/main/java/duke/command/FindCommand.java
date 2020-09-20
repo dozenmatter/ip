@@ -2,6 +2,7 @@ package duke.command;
 
 import duke.exception.DukeException;
 import duke.store.Storage;
+import duke.task.Task;
 import duke.task.TaskList;
 import duke.ui.Ui;
 
@@ -26,7 +27,17 @@ public class FindCommand extends Command {
 
     @Override
     public void execute(TaskList tasks, Ui ui, Storage storage) {
-        ui.printSearchResult(tasks, keyword);
+        String searchResult = "";
+        for (int i = 0, j = 0; i < tasks.getSize(); i++) {
+            Task task = tasks.get(i);
+            if (task.getDescription().contains(keyword)) {
+                searchResult += (++j) + ". " + task.toString() + "\n";
+            }
+        }
+
+        // Remove the last break-line character
+        searchResult = searchResult.substring(0, searchResult.length() - 1);
+        ui.printSearchResult(searchResult);
     }
 
     @Override
