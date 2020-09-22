@@ -54,13 +54,13 @@ Adds a ToDo task into the task list. The program prints the task added and the c
 
 **Expected outcome:**
 
-    ```
-    ____________________________________________________________
-    Got it. I've added this task:
-    [T][✘] eat
-    Now you have 1 tasks in the list.
-    ____________________________________________________________
-    ```
+```
+____________________________________________________________
+Got it. I've added this task:
+[T][✘] eat
+Now you have 1 tasks in the list.
+____________________________________________________________
+```
 
 
 ### `deadline`
