@@ -11,23 +11,23 @@
 4. Open your command line or terminal and navigate into the file directory where you saved the Duke application.
 
 5. Run the command ```java -jar Duke.jar``` to launch Duke. You should see the following *welcome* screen.
-```
-Hello from
- ____        _        
-|  _ \ _   _| | _____ 
-| | | | | | | |/ / _ \
-| |_| | |_| |   <  __/
-|____/ \__,_|_|\_\___|
+    ```
+    Hello from
+     ____        _        
+    |  _ \ _   _| | _____ 
+    | | | | | | | |/ / _ \
+    | |_| | |_| |   <  __/
+    |____/ \__,_|_|\_\___|
 
-Hello! I'm Duke
-What can I do for you?
-____________________________________________________________
-```
+    Hello! I'm Duke
+    What can I do for you?
+    ____________________________________________________________
+    ```
 
 7. Type a command in the command line and press *Enter* to execute it.
 
 8. Refer to the Usage below for details of each command.
-<br>
+
 
 ## Features 
 
@@ -37,11 +37,10 @@ Allows you to create your own task list by adding, removing and marking of tasks
 ### Data Saving
 Changes in task list is automatically saved into a local file and loaded on program start.
 
-<br>
 
 ## Usage
 
-### `todo`
+### Add ToDo task - `todo`
 
 Adds a ToDo task into the task list. The program prints the task added and the current number of tasks in the task list.
 
@@ -62,9 +61,9 @@ Got it. I've added this task:
 Now you have 1 tasks in the list.
 ____________________________________________________________
 ```
-<br>
 
-### `deadline`
+
+### Add Deadline task - `deadline`
 
 Adds a Deadline task into the task list. The program prints the task added and the current number of tasks in the task list.
 
@@ -87,9 +86,9 @@ Got it. I've added this task:
 Now you have 2 tasks in the list.
 ____________________________________________________________
 ```
-<br>
 
-### `event`
+
+### Add Event task - `event`
 
 Adds an Event task into the task list. Prints the task added and the current number of tasks in the task list.
 
@@ -112,9 +111,9 @@ Got it. I've added this task:
 Now you have 3 tasks in the list.
 ____________________________________________________________
 ```
-<br>
 
-### `list`
+
+### List all tasks - `list`
 
 Displays all tasks in the task list.
 
@@ -135,11 +134,10 @@ Here are the tasks in your list:
 2. [D][✘] submit IP (by: Sep 16 2020, 11:59PM)
 3. [E][✘] discuss TP (at: Sep 20 2020, 11:00AM)
 ____________________________________________________________
-
 ```
-<br>
 
-### `done`
+
+### Mark task as done - `done`
 
 Marks a task as done in the task list.
 
@@ -158,11 +156,10 @@ ____________________________________________________________
 Nice! I've marked this task as done:
 [T][✓] eat
 ____________________________________________________________
-
 ```
-<br>
 
-### `delete`
+
+### Delete task - `delete`
 
 Removes a task from the task list. Prints the task deleted and the current number of tasks in the task list.
 
@@ -183,9 +180,9 @@ Noted. I've removed this task:
 Now you have 2 tasks in the list.
 ____________________________________________________________
 ```
-<br>
 
-### `find`
+
+### Find task - `find`
 
 Finds a task by keyword. Prints the list of tasks found.
 
@@ -205,9 +202,9 @@ Here are the matching tasks in your list:
 1. [D][✘] submit IP (by: Sep 16 2020, 11:59PM)
 ____________________________________________________________
 ```
-<br>
 
-### `bye`
+
+### Exit - `bye`
 
 Exits the Duke application with goodbye message.
 
