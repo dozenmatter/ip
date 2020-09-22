@@ -4,15 +4,13 @@
 
 1. Ensure that you have **Java 11** or above installed in your computer.
 
-2. Download the latest `Duke.jar` from [here](https://github.com/dozenmatter/ip).
+2. Download the latest `Duke.jar` from [here](https://github.com/dozenmatter/ip/releases).
 
 3. Copy the file to the folder you want as your *home folder* for Duke.
 
-4. In **Windows**, open **cmd** and *cd* into the current file directory where you placed the Duke application.
+4. Open your command line or terminal and navigate into the file directory where you saved the Duke application.
 
-5. In **Linux**, open **terminal** and *cd* into the current file directory where you placed the Duke application.
-
-6. Run the command ```java -jar Duke.jar``` to launch Duke. You should see the following *welcome* screen.
+5. Run the command ```java -jar Duke.jar``` to launch Duke. You should see the following *welcome* screen.
 ```
 Hello from
  ____        _        
@@ -26,15 +24,20 @@ What can I do for you?
 ____________________________________________________________
 ```
 
-7. Type the command in the command line and press *Enter* to execute it.
+7. Type a command in the command line and press *Enter* to execute it.
 
 8. Refer to the Usage below for details of each command.
-
+<br>
 
 ## Features 
 
-### Feature 1 
-Description of feature.
+### Task List
+Allows you to create your own task list by adding, removing and marking of tasks.
+
+### Data Saving
+Changes in task list is automatically saved into a local file and loaded on program start.
+
+<br>
 
 ## Usage
 
