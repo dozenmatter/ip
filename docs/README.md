@@ -40,7 +40,7 @@ Changes in task list is automatically saved into a local file and loaded on prog
 
 ## Usage
 
-### `todo`
+### test `todo`
 
 Adds a ToDo task into the task list. The program prints the task added and the current number of tasks in the task list.
 
