@@ -40,7 +40,7 @@ Changes in task list is automatically saved into a local file and loaded on prog
 
 ## Usage
 
-### test `todo`
+### Add ToDo task `todo`
 
 Adds a ToDo task into the task list. The program prints the task added and the current number of tasks in the task list.
 
@@ -63,7 +63,7 @@ ____________________________________________________________
 ```
 
 
-### `deadline`
+### Add Deadline task `deadline`
 
 Adds a Deadline task into the task list. The program prints the task added and the current number of tasks in the task list.
 
@@ -88,7 +88,7 @@ ____________________________________________________________
 ```
 
 
-### `event`
+### Add Event task `event`
 
 Adds an Event task into the task list. Prints the task added and the current number of tasks in the task list.
 
@@ -113,7 +113,7 @@ ____________________________________________________________
 ```
 
 
-### `list`
+### List all tasks `list`
 
 Displays all tasks in the task list.
 
@@ -137,7 +137,7 @@ ____________________________________________________________
 ```
 
 
-### `done`
+### Mark task as done `done`
 
 Marks a task as done in the task list.
 
@@ -159,7 +159,7 @@ ____________________________________________________________
 ```
 
 
-### `delete`
+### Delete task `delete`
 
 Removes a task from the task list. Prints the task deleted and the current number of tasks in the task list.
 
@@ -182,7 +182,7 @@ ____________________________________________________________
 ```
 
 
-### `find`
+### Find task `find`
 
 Finds a task by keyword. Prints the list of tasks found.
 
@@ -204,7 +204,7 @@ ____________________________________________________________
 ```
 
 
-### `bye`
+### Exit `bye`
 
 Exits the Duke application with goodbye message.
 
