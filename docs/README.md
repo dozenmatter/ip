@@ -27,7 +27,7 @@ ____________________________________________________________
 7. Type a command in the command line and press *Enter* to execute it.
 
 8. Refer to the Usage below for details of each command.
-<br>
+
 
 ## Features 
 
@@ -37,7 +37,6 @@ Allows you to create your own task list by adding, removing and marking of tasks
 ### Data Saving
 Changes in task list is automatically saved into a local file and loaded on program start.
 
-<br>
 
 ## Usage
 
@@ -62,7 +61,7 @@ Got it. I've added this task:
 Now you have 1 tasks in the list.
 ____________________________________________________________
 ```
-<br>
+
 
 ### `deadline`
 
@@ -87,7 +86,7 @@ Got it. I've added this task:
 Now you have 2 tasks in the list.
 ____________________________________________________________
 ```
-<br>
+
 
 ### `event`
 
@@ -112,7 +111,7 @@ Got it. I've added this task:
 Now you have 3 tasks in the list.
 ____________________________________________________________
 ```
-<br>
+
 
 ### `list`
 
@@ -137,7 +136,7 @@ Here are the tasks in your list:
 ____________________________________________________________
 
 ```
-<br>
+
 
 ### `done`
 
@@ -160,7 +159,7 @@ Nice! I've marked this task as done:
 ____________________________________________________________
 
 ```
-<br>
+
 
 ### `delete`
 
@@ -183,7 +182,7 @@ Noted. I've removed this task:
 Now you have 2 tasks in the list.
 ____________________________________________________________
 ```
-<br>
+
 
 ### `find`
 
@@ -205,7 +204,7 @@ Here are the matching tasks in your list:
 1. [D][✘] submit IP (by: Sep 16 2020, 11:59PM)
 ____________________________________________________________
 ```
-<br>
+
 
 ### `bye`
 
