@@ -79,13 +79,13 @@ Adds a Deadline task into the task list. The program prints the task added and t
 
 **Expected outcome:**
 
-    ```
-    ____________________________________________________________
-    Got it. I've added this task:
-    [D][✘] submit IP (by: Sep 16 2020, 11:59PM)
-    Now you have 2 tasks in the list.
-    ____________________________________________________________
-    ```
+```
+____________________________________________________________
+Got it. I've added this task:
+[D][✘] submit IP (by: Sep 16 2020, 11:59PM)
+Now you have 2 tasks in the list.
+____________________________________________________________
+```
 
 
 ### `event`
@@ -104,13 +104,13 @@ Adds an Event task into the task list. Prints the task added and the current num
 
 **Expected outcome:**
 
-    ```
-    ____________________________________________________________
-    Got it. I've added this task:
-    [E][✘] discuss TP (at: Sep 20 2020, 11:00AM)
-    Now you have 3 tasks in the list.
-    ____________________________________________________________
-    ```
+```
+____________________________________________________________
+Got it. I've added this task:
+[E][✘] discuss TP (at: Sep 20 2020, 11:00AM)
+Now you have 3 tasks in the list.
+____________________________________________________________
+```
 
 
 ### `list`
@@ -127,14 +127,14 @@ Displays all tasks in the task list.
 
 **Expected outcome:**
 
-    ```
-    ____________________________________________________________
-    Here are the tasks in your list:
-    1. [T][✘] eat
-    2. [D][✘] submit IP (by: Sep 16 2020, 11:59PM)
-    3. [E][✘] discuss TP (at: Sep 20 2020, 11:00AM)
-    ____________________________________________________________
-    ```
+```
+____________________________________________________________
+Here are the tasks in your list:
+1. [T][✘] eat
+2. [D][✘] submit IP (by: Sep 16 2020, 11:59PM)
+3. [E][✘] discuss TP (at: Sep 20 2020, 11:00AM)
+____________________________________________________________
+```
 
 
 ### `done`
@@ -151,12 +151,12 @@ Marks a task as done in the task list.
 
 **Expected outcome:**
 
-    ```
-    ____________________________________________________________
-    Nice! I've marked this task as done:
-    [T][✓] eat
-    ____________________________________________________________
-    ```
+```
+____________________________________________________________
+Nice! I've marked this task as done:
+[T][✓] eat
+____________________________________________________________
+```
 
 
 ### `delete`
@@ -173,13 +173,13 @@ Removes a task from the task list. Prints the task deleted and the current numbe
 
 **Expected outcome:**
 
-    ```
-    ____________________________________________________________
-    Noted. I've removed this task:
-    [T][✓] eat
-    Now you have 2 tasks in the list.
-    ____________________________________________________________
-    ```
+```
+____________________________________________________________
+Noted. I've removed this task:
+[T][✓] eat
+Now you have 2 tasks in the list.
+____________________________________________________________
+```
 
 
 ### `find`
@@ -196,12 +196,12 @@ Finds a task by keyword. Prints the list of tasks found.
 
 **Expected outcome:**
 
-    ```
-    ____________________________________________________________
-    Here are the matching tasks in your list:
-    1. [D][✘] submit IP (by: Sep 16 2020, 11:59PM)
-    ____________________________________________________________
-    ```
+```
+____________________________________________________________
+Here are the matching tasks in your list:
+1. [D][✘] submit IP (by: Sep 16 2020, 11:59PM)
+____________________________________________________________
+```
 
 
 ### `bye`
@@ -218,6 +218,6 @@ Exits the Duke application with goodbye message.
 
 **Expected outcome:**
 
-    ```
-    Bye. Hope to see you again soon!
-    ```
+```
+Bye. Hope to see you again soon!
+```
