@@ -36,7 +36,9 @@ public class FindCommand extends Command {
         }
 
         // Remove the last break-line character
-        searchResult = searchResult.substring(0, searchResult.length() - 1);
+        if (!searchResult.isEmpty()) {
+            searchResult = searchResult.substring(0, searchResult.length() - 1);
+        }
         ui.printSearchResult(searchResult);
     }
 
