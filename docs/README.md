@@ -1,5 +1,22 @@
 # User Guide
+Duke is a Command Line Interface (CLI) application that helps you with mangaging of tasks.
 
+## Table of Contents
+- [Quick start](#quick-start)
+- [Features](#features)
+  * [Task List Management](#task-list-management)
+  * [Task Search](#task-search)
+  * [Data Storage](#data-storage)
+- [Usage](#usage)
+  * [Add ToDo Task](#add-todo-task---todo)
+  * [Add Deadline Task](#add-deadline-task---deadline)
+  * [Add Event Task](#add-event-task---event)
+  * [List All Tasks](#list-all-tasks---list)
+  * [Mark Task as Done](#mark-task-as-done---done)
+  * [Delete Task](#delete-task---delete)
+  * [Find Task](#find-task---find)
+  * [Exit](#exit---bye)
+  
 ## Quick start
 
 1. Ensure that you have **Java 11** or above installed in your computer.
@@ -31,16 +48,19 @@
 
 ## Features 
 
-### Task List
-Allows you to create your own task list by adding, removing and marking of tasks.
+### Task List Management
+Allows you to create your own task list by adding, removing and marking completion of tasks.
 
-### Data Saving
-Changes in task list is automatically saved into a local file and loaded on program start.
+### Task Search
+Allows searching of tasks simply by providing a keyword.
+
+### Data Storage
+Changes in task list will be automatically saved into a local file and loaded on program start.
 
 
 ## Usage
 
-### Add ToDo task - `todo`
+### Add ToDo Task - `todo`
 
 Adds a ToDo task into the task list. The program prints the task added and the current number of tasks in the task list.
 
@@ -63,7 +83,7 @@ ____________________________________________________________
 ```
 
 
-### Add Deadline task - `deadline`
+### Add Deadline Task - `deadline`
 
 Adds a Deadline task into the task list. The program prints the task added and the current number of tasks in the task list.
 
@@ -88,7 +108,7 @@ ____________________________________________________________
 ```
 
 
-### Add Event task - `event`
+### Add Event Task - `event`
 
 Adds an Event task into the task list. Prints the task added and the current number of tasks in the task list.
 
@@ -113,7 +133,7 @@ ____________________________________________________________
 ```
 
 
-### List all tasks - `list`
+### List all Tasks - `list`
 
 Displays all tasks in the task list.
 
@@ -137,7 +157,7 @@ ____________________________________________________________
 ```
 
 
-### Mark task as done - `done`
+### Mark Task as Done - `done`
 
 Marks a task as done in the task list.
 
@@ -159,7 +179,7 @@ ____________________________________________________________
 ```
 
 
-### Delete task - `delete`
+### Delete Task - `delete`
 
 Removes a task from the task list. Prints the task deleted and the current number of tasks in the task list.
 
@@ -182,7 +202,7 @@ ____________________________________________________________
 ```
 
 
-### Find task - `find`
+### Find Task - `find`
 
 Finds a task by keyword. Prints the list of tasks found.
 
